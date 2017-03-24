@@ -7,7 +7,11 @@ app.use(function *() {
 var port = process.env.PORT || (process.argv[2] || 3000);
 port = (typeof port === "number") ? port : 3000;
 
-app.listen(port); 
+// only start app if this is not run by the test
+// in testing the test will start the application  
+if(!module.parent) {
+  app.listen();
+}
 console.log(`Application started on port ${port}`); 
 
 // console.log("The process.argv[0] is " + process.argv[0]);

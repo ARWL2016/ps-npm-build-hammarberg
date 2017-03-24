@@ -6,7 +6,7 @@
   "scripts": {
     "pretest": "npm run compile && npm run lint",
     "test": "mocha test -u bdd -R spec",
-    "prestart": "node startSCript.js",
+    "prestart": "node startScript.js",
     "start": "node index.js",
     "start:dev": "node index.js 5000",
     "lint": "jshint index.js test/ ",
@@ -15,7 +15,13 @@
     "compile": "npm run compile:coffee && npm run compile:ts",
     "precompile": "npm run clean",
     "clean": "rimraf lib/*",
-    "build:less": "lessc client/less/demo.less public/css/site.css"
+    "build:less": "lessc client/less/demo.less public/css/site.css",
+    "build:bundle": "browserify ./client/js/app.js | uglifyjs -mc > ./public/js/bundle.js",
+    "build:clean": "rimraf public/css/* public/js/*",
+    "prebuild": "npm run build:clean",
+    "build": "npm run build:bundle && npm run build:less",
+    "watch:test": "npm run test -- -w -R min", 
+    "watch:lint": "watch \"npm run lint\" ."
   },
   "jshintConfig": {
     "esnext": "true",
@@ -31,7 +37,9 @@
     "rimraf": "^2.4.3",
     "should": "^7.1.0",
     "supertest": "^1.1.0",
-    "typescript": "^1.6.2"
+    "typescript": "^1.6.2",
+    "uglify-js": "^2.8.15",
+    "watch": "^1.0.2"
   },
   "dependencies": {
     "koa": "^1.0.0"
