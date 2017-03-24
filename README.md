@@ -8,7 +8,7 @@ https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=mar
 - Koa 1.0.0 http://koajs.com/#introduction (now on 2.2.0 with breaking changes)
 - Supertest 1.1.0  (now 3.0.0 with a simpler setup)
 - JSHint 2.9.4 (latest)
-
+---
 ### Notes on NPM 
 
 #### Built-in Scripts
@@ -43,7 +43,7 @@ https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=mar
 - These will be hooked in automatically  
 - They can also be run by themselves: `npm run pretest`  
 - They also work for our custom scripts  
-
+---
 ### Notes on Libraries 
 
 #### Mocha 
