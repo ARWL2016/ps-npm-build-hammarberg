@@ -12,6 +12,7 @@ https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=mar
 - rimraf@2.4.3 - recursive folder clean out for windows  
 ---
 ### Notes on NPM 
+- `npm list -g --depth=0` - this will list globally install libraries from `C:\Users\Alistair\AppData\Roaming\npm`
 
 #### Built-in Scripts
 - npm (run) test | tst | t
@@ -72,7 +73,12 @@ https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=mar
 - the output goes to `lib` - but why, when it is not 3rd party code?  
 - `"compile:coffee": "coffee --compile --output ./lib ./src/coffeescripts"`  
 
-####Typescript 
+#### Typescript 
 - works as coffeescript but the compile command specifies module type and uses --outDir instead of --output
 - `"compile:ts": "tsc --outDir ./lib --module commonjs ./src/typescripts/tsCode.ts"`
 - cleaning out the output file with rimraf helps to verify the compile step
+
+#### Less
+- install less GLOBALLY: `npm install -g less`
+- run `lessc client/less/demo.less public/css/site.css` - lessc src target
+- to compile multiple files, have a single index file which imports everything: `@import "base.less"` etc 

@@ -14,7 +14,8 @@
     "compile:ts": "tsc --outDir ./lib --module commonjs ./src/typescripts/tsCode.ts",
     "compile": "npm run compile:coffee && npm run compile:ts",
     "precompile": "npm run clean",
-    "clean": "rimraf lib/*"
+    "clean": "rimraf lib/*",
+    "build:less": "lessc client/less/demo.less public/css/site.css"
   },
   "jshintConfig": {
     "esnext": "true",
