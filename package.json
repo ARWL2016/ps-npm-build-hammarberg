@@ -1,0 +1,21 @@
+{
+  "name": "ps-npm-build-hammarberg",
+  "version": "1.0.0",
+  "description": "- npm (run) test | tst | t\r - npm (run) start \r - npm run stop \r - npm run restart - (if restart is not defined, npm will run stop and then start)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test -u bdd -R spec",
+    "start": "node index.js",
+    "start:dev": "node index.js 5000"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^2.3.2",
+    "should": "^7.1.0",
+    "supertest": "^1.1.0"
+  },
+  "dependencies": {
+    "koa": "^1.0.0"
+  }
+}
