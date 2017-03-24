@@ -4,13 +4,20 @@
   "description": "- npm (run) test | tst | t\r - npm (run) start \r - npm run stop \r - npm run restart - (if restart is not defined, npm will run stop and then start)",
   "main": "index.js",
   "scripts": {
+    "pretest": "npm run lint",
     "test": "mocha test -u bdd -R spec",
     "start": "node index.js",
-    "start:dev": "node index.js 5000"
+    "start:dev": "node index.js 5000",
+    "lint": "jshint index.js test/ "
+  },
+  "jshintConfig": {
+    "esnext": "true", 
+    "noyield": "true"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "jshint": "^2.9.4",
     "mocha": "^2.3.2",
     "should": "^7.1.0",
     "supertest": "^1.1.0"

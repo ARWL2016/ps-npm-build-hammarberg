@@ -7,6 +7,7 @@ https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=mar
 - Should 7.1.0
 - Koa 1.0.0 http://koajs.com/#introduction (now on 2.2.0 with breaking changes)
 - Supertest 1.1.0  (now 3.0.0 with a simpler setup)
+- JSHint 2.9.4 (latest)
 
 #### Built-in Scripts
 - npm (run) test | tst | t
@@ -25,6 +26,9 @@ https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=mar
 - dir - list current directory 
 - dir node_modules - list a child directory 
 
+NPM Command Line Flags 
+- -s - silent (reduces output)
+
 #### Notes
 - look in `node_modules/.bin` to find list of available commands from our modules 
 
@@ -36,3 +40,15 @@ https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=mar
 - command line flags: https://mochajs.org/#usage 
 - u - user interface (bdd | tdd)
 - R - reporters (spec | list)
+
+#### JSHint 
+- Note that Windows does not seem to supprt wildcards as jshint parameters 
+- specific files or folders can be given: `"lint": "jshint index.js test/ "`
+- JSHint Config can be done inside package.json or `.jshintrc`
+- Note that if linting finds an error, it will cease execution with exit code 1  
+
+#### Pre and Post Hooks 
+- Create a new script such as `pretest`, `posttest` (without hyphen)
+- These will be hooked in automatically  
+- They can also be run by themselves: `npm run pretest`  
+- They also work for our custom scripts  
