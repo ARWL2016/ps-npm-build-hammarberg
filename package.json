@@ -4,23 +4,33 @@
   "description": "- npm (run) test | tst | t\r - npm (run) start \r - npm run stop \r - npm run restart - (if restart is not defined, npm will run stop and then start)",
   "main": "index.js",
   "scripts": {
-    "pretest": "npm run lint",
+    "pretest": "npm run compile && npm run lint",
     "test": "mocha test -u bdd -R spec",
+    "prestart": "node startSCript.js",
     "start": "node index.js",
     "start:dev": "node index.js 5000",
-    "lint": "jshint index.js test/ "
+    "lint": "jshint index.js test/ ",
+    "compile:coffee": "coffee --compile --output ./lib ./src/coffeescripts",
+    "compile:ts": "tsc --outDir ./lib --module commonjs ./src/typescripts/tsCode.ts",
+    "compile": "npm run compile:coffee && npm run compile:ts",
+    "precompile": "npm run clean",
+    "clean": "rimraf lib/*"
   },
   "jshintConfig": {
-    "esnext": "true", 
+    "esnext": "true",
     "noyield": "true"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "chalk": "^1.1.3",
+    "coffee-script": "^1.10.0",
     "jshint": "^2.9.4",
     "mocha": "^2.3.2",
+    "rimraf": "^2.4.3",
     "should": "^7.1.0",
-    "supertest": "^1.1.0"
+    "supertest": "^1.1.0",
+    "typescript": "^1.6.2"
   },
   "dependencies": {
     "koa": "^1.0.0"

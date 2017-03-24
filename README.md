@@ -8,6 +8,8 @@ https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=mar
 - Koa 1.0.0 http://koajs.com/#introduction (now on 2.2.0 with breaking changes)
 - Supertest 1.1.0  (now 3.0.0 with a simpler setup)
 - JSHint 2.9.4 (latest)
+- Coffeescript and Typescript - compile script and folder structure  
+- rimraf@2.4.3 - recursive folder clean out for windows  
 ---
 ### Notes on NPM 
 
@@ -27,6 +29,8 @@ https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=mar
 - echo text > file.js - creates new with text
 - dir - list current directory 
 - dir node_modules - list a child directory 
+- && - joins two commands but if the first exits, the second will not run 
+- ; - joins two commands which will run whatever  
 
 #### NPM Command Line Flags 
 - -s - silent (reduces output)
@@ -43,6 +47,11 @@ https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=mar
 - These will be hooked in automatically  
 - They can also be run by themselves: `npm run pretest`  
 - They also work for our custom scripts  
+
+#### Combining Commands 
+- To run one command from another, just use `npm run command-name`  
+- To run multiple commands, just use && - if the first errors out, the second will not run
+
 ---
 ### Notes on Libraries 
 
@@ -56,4 +65,14 @@ https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=mar
 - specific files or folders can be given: `"lint": "jshint index.js test/ "`
 - JSHint Config can be done inside package.json or `.jshintrc`
 - Note that if linting finds an error, it will cease execution with exit code 1  
+- --exclude file | folder 
 
+#### Coffeescript 
+- the original is kept in `src/coffescript` 
+- the output goes to `lib` - but why, when it is not 3rd party code?  
+- `"compile:coffee": "coffee --compile --output ./lib ./src/coffeescripts"`  
+
+####Typescript 
+- works as coffeescript but the compile command specifies module type and uses --outDir instead of --output
+- `"compile:ts": "tsc --outDir ./lib --module commonjs ./src/typescripts/tsCode.ts"`
+- cleaning out the output file with rimraf helps to verify the compile step
