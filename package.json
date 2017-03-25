@@ -30,8 +30,8 @@
     "postdeploy": "heroku open"
   },
   "engines": {
-    "node": "~4.0.0", 
-    "npm": "~2.14.0"
+    "node": "6.9.2", 
+    "npm": "3.10.9"
   },
   "jshintConfig": {
     "esnext": "true",
