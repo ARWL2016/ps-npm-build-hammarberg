@@ -29,6 +29,10 @@
     "watch:browser": "live-reload --port 9091 public/",
     "watch": "npm-run-all --parallel watch:test watch:bundle watch:server watch:browser"
   },
+  "engines": {
+    "node": "~6.9.2", 
+    "npm": "~3.10.9"
+  },
   "jshintConfig": {
     "esnext": "true",
     "noyield": "true"

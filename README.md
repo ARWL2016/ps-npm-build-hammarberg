@@ -5,6 +5,8 @@ https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=mar
  [General Notes on NPM](notes/libraries.md)  
  [Notes on Featured Libraries](notes/libraries.md)
 
+ [Building a Javascript Development Environment - Cory House](https://github.com/ARWL2016/ps-javascript-dev-env)  
+
 #### Featured Libraries 
 - Mocha 2.3.2
 - Should 7.1.0
