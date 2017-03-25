@@ -1,6 +1,7 @@
 ### Notes on NPM 
 
- [Notes on Featured Libraries](libraries.md)
+[Notes on Featured Libraries](libraries.md)  
+[Back to README](../README.md)  
 
 #### Built-in Scripts
 - npm (run) test | tst | t
