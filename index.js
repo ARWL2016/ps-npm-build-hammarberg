@@ -24,16 +24,19 @@ app.use(function *() {
   this.body = "Koa says Hi!";
 });
 
-var port = process.env.PORT || (process.argv[2] || 3000);
-port = (typeof port != "number") ? port : 3000;
+// var port = process.env.PORT || (process.argv[2] || 3000);
+// port = (typeof port != "number") ? port : 3000;
+
+var port = process.env.PORT; 
+app.listen(port); 
 
 // only start app if this is not run by the test
 // in testing the test will start the application  
-if(!module.parent) {
-  app.listen(port);
-}
+// if(!module.parent) {
+//   app.listen(port);
+// }
 
-console.log(`Application started on port ${port}`); 
+console.log('Application started on port:' + port); 
 
 // console.log("The process.argv[0] is " + process.argv[0]);
 // console.log("The process.argv[1] is " + process.argv[1]);
