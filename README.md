@@ -1,8 +1,8 @@
 ## NPM Scripts as a Build Tool (Hammarberg, PS: 2015)
 
-Github: https://github.com/ARWL2016/ps-npm-build-hammarberg 
-Course: https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=marcus-hammarberg&name=npm-build-tool-introduction-m2&clip=2
-Heroku: https://npmscripts-demo.herokuapp.com/ (not much to see here)
+Github: https://github.com/ARWL2016/ps-npm-build-hammarberg   
+Course: https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=marcus-hammarberg&name=npm-build-tool-introduction-m2&clip=2  
+Heroku: https://npmscripts-demo.herokuapp.com/ (not much to see here)  
 
  [General Notes on NPM](notes/libraries.md)  
  [Notes on Featured Libraries](notes/libraries.md)
