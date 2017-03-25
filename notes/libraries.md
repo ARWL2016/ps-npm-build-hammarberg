@@ -1,6 +1,6 @@
 ### Notes on Libraries 
 
- [General Notes on NPM](notes/libraries.md)  
+ [General Notes on NPM](libraries.md)  
 
 #### Mocha 
 - command line flags: https://mochajs.org/#usage 
