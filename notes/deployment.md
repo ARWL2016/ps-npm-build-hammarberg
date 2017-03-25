@@ -1,4 +1,10 @@
-##Versioning 
+##Versioning, Git and Deployment
+
+[Back to README](../README.md)
+
+Nb. There is additional material on these topics in module 7 & 8 of the course. 
+
+#### Versioning
 
 - `npm version` will output information about the current application, node and npm, the V8 etc. 
 - `npm version major | minor | patch` will increment the application version number in package JSON 

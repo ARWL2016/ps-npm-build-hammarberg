@@ -5,6 +5,7 @@ https://npmscripts-demo.herokuapp.com/ (not much to see here)
 
  [General Notes on NPM](notes/libraries.md)  
  [Notes on Featured Libraries](notes/libraries.md)
+ [Notes on Versioning, Git and Deployment](notes/deployment.md)
 
  [Building a Javascript Development Environment - Cory House](https://github.com/ARWL2016/ps-javascript-dev-env)  
 
