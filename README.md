@@ -13,7 +13,10 @@ https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=mar
 - Less 
 - Browserify 
 - Uglify-js 2.8.15 (latest) 
-- Watch
+- Watch - watches linting 
+- Watchify - partners with Browserify to watch files and rebundle  
+- Nodemon 1.11.0 
+- Live-reload 1.1.0 (hot reloading)
 ---
 ### Notes on NPM 
 
@@ -51,7 +54,7 @@ https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=mar
 
 #### Chaining Commands 
 - To run one command from another, just use `npm run command-name`  
-- To run multiple commands, just use && - if the first errors out, the second will not run
+- To run multiple commands, just use && - if the first errors out, the second will not run 
 
 #### Piping Output 
 - Example: "build:bundle": "browserify ./client/js/app.js | uglifyjs -mc > ./public/js/bundle.js"
@@ -61,9 +64,17 @@ https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=mar
 - `"watch:test": "npm run test -- -w -R min"` This means, run the test script with these parameters. They will override the pre-existing parameters.  
 
 #### Watching
-- some libraries have a build in watch function
+- many libraries have a build in watch function: mocha, coffeescript, typescript - just add the -w flag to the script  
 - in Mocha we can use the -w or --watch flag: `"watch:test": "mocha test -u bdd -R min --watch"`
-- We can use the `watch` library to watch other processes: `"watch:lint": "watch \"npm run lint\" ."`
+- We can use the `watch` library to watch processes that don't have a built-ini watcher: `"watch:lint": "watch \"npm run lint\" ."`
+- watchify goes with browserify. It takes flags such as -d (delay execution) and -v (verbose logging)
+- watchify does not include uglify because this is only part of the build step
+- we can also use the `watch` library for this: `"watch:bundleWatcher"`: "watch 'npm run build:bundle' client"` (quotes may need to be escaped)
+
+#### Running Scripts Concurrently 
+- `npm install npm-run-all --save-dev`
+- `"watch": "npm-run-all --parallel watch:server watch:browser"`
+- This is a Windows solution. Unix has the `&` operator 
 
 ---
 ### Notes on Libraries 
@@ -104,3 +115,23 @@ https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=mar
 #### Uglify-js 
 - installed locally (but global install possible)
 - pipe output from Browserify `"build:bundle": "browserify ./client/js/app.js | uglifyjs -mc > ./public/js/bundle.js"`
+
+#### Nodemon 
+- install locally 
+- `"watch:server": "nodemon index.js"` - this will restart the server when a change is made to this file
+- `--ignore client` - this flag can be used to exclude for example source files that need compiling  
+
+#### Live-reload 
+- install locally 
+- `"watch:browser": "live-reload --port 9091 public/"`. Live-reload will watch a folder for changes and then reload the page
+- This is used in parallel with the nodemon process which watches index.js: `"watch:server": "nodemon --ignore client --ignore public index.js"`
+- Use `npm-run-all` module for concurrency: `"watch": "npm-run-all --parallel watch:server watch:browser"`
+- Summary: nodemon watches and restarts the server while live-reload watches the bundle 
+
+#### Summary of Compound Watch Script
+1. There are 4 concurrent tasks for test, bundle, server and browser-reload 
+2. watch:test runs mocha in watch mode 
+3. watch:bundle runs a plain version of the browserify build without uglify-js (minification). It does this using watchify.  
+4. watch:server uses nodemon to watch the index.js for changes
+5. watch:browser watches the public folder (bundle and css) and reloads the page  
+6. Note that this sequence apparently excludes the less files. But if they are rebuilt, the output change would trigger live-reload
