@@ -25,7 +25,7 @@ app.use(function *() {
 });
 
 var port = process.env.PORT || (process.argv[2] || 3000);
-port = (typeof port === "number") ? port : 3000;
+port = (typeof port != "number") ? port : 3000;
 
 // only start app if this is not run by the test
 // in testing the test will start the application  
