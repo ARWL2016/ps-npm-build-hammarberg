@@ -2,6 +2,9 @@
 
 https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=marcus-hammarberg&name=npm-build-tool-introduction-m2&clip=2
 
+ [General Notes on NPM](notes/libraries.md)  
+ [Notes on Featured Libraries](notes/libraries.md)
+
 #### Featured Libraries 
 - Mocha 2.3.2
 - Should 7.1.0
@@ -18,7 +21,6 @@ https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=mar
 - Nodemon 1.11.0 
 - Live-reload 1.1.0 (hot reloading)
 
- [General Notes on NPM](notes/libraries.md)
- [Notes on Featured Libraries](notes/libraries.md)
+
 
 

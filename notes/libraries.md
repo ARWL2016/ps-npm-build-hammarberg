@@ -1,5 +1,7 @@
 ### Notes on Libraries 
 
+ [General Notes on NPM](notes/libraries.md)  
+
 #### Mocha 
 - command line flags: https://mochajs.org/#usage 
 - u - user interface (bdd | tdd)

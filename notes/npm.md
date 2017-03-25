@@ -1,5 +1,7 @@
 ### Notes on NPM 
 
+ [Notes on Featured Libraries](notes/libraries.md)
+
 #### Built-in Scripts
 - npm (run) test | tst | t
 - npm (run) start 
