@@ -25,6 +25,7 @@
 - dir node_modules - list a child directory 
 - && - joins two commands but if the first exits, the second will not run 
 - ; - joins two commands which will run whatever  
+- `start url` will open a website - but we can also use `heroku open` for heroku deployed apps 
 
 #### process.argv
 - This is an array which captures arguments on the command line 
