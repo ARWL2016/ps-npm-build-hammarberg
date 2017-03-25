@@ -5,7 +5,7 @@ var html =
     `<html>
         <head>
             <meta charset="UTF-8">
-            <title>A small test page which has changed</title>
+            <title>A small test page</title>
             <script src="//localhost:9091"></script>
         </head>
         <body>

@@ -26,7 +26,8 @@
     "watch:bundle": "watchify ./client/js/app.js -o ./public/js/bundle.js -dv",
     "watch:browser": "live-reload --port 9091 public/",
     "watch": "npm-run-all --parallel watch:test watch:bundle watch:server watch:browser", 
-    "deploy": "git push heroku master && heroku open"
+    "deploy": "git push heroku master", 
+    "postdeploy": "heroku open"
   },
   "engines": {
     "node": "~4.0.0", 

@@ -1,6 +1,6 @@
 ### Notes on Libraries 
 
-[General Notes on NPM](libraries.md)  
+[General Notes on NPM](npm.md)  
 [Back to README](../README.md)
 
 #### Mocha 
