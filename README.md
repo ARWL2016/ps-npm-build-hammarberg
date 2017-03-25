@@ -1,14 +1,17 @@
 ## NPM Scripts as a Build Tool (Hammarberg, PS: 2015)
 
-Github: https://github.com/ARWL2016/ps-npm-build-hammarberg   
-Course: https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=marcus-hammarberg&name=npm-build-tool-introduction-m2&clip=2  
-Heroku: https://npmscripts-demo.herokuapp.com/ (not much to see here)  
+#### Useful Links
+https://github.com/ARWL2016/ps-npm-build-hammarberg   
+https://app.pluralsight.com/player?course=npm-build-tool-introduction&author=marcus-hammarberg&name=npm-build-tool-introduction-m2&clip=2  
+https://npmscripts-demo.herokuapp.com/ (not much to see here)  
+[Building a Javascript Development Environment - Cory House](https://github.com/ARWL2016/ps-javascript-dev-env)  
 
- [General Notes on NPM](notes/libraries.md)  
- [Notes on Featured Libraries](notes/libraries.md)
- [Notes on Versioning, Git and Deployment](notes/deployment.md)
+#### Links to Notes
+- [General Notes on NPM](notes/libraries.md)  
+- [Notes on Featured Libraries](notes/libraries.md)
+- [Notes on Versioning, Git and Deployment](notes/deployment.md)
 
- [Building a Javascript Development Environment - Cory House](https://github.com/ARWL2016/ps-javascript-dev-env)  
+
 
 #### Featured Libraries 
 - Mocha 2.3.2
